@@ -73,6 +73,81 @@ for boja in Karta.boje():
     k=Karta(broj, boja)
     print ('%r %s' % (k, k))
     
+
+class Spil(object):
+
+    def __init__(self):
+        self.__karte = []
+        for zog in Karta.zogovi():
+            for broj in Karta.brojevi():
+                self.__karte.append(Karta(broj,zog))
+
+    def __str__(self, red = 7, velicina = 18):
+        return '\n'.join(''.join(str(karta).ljust(velicina, ' ') for karta in self.__karte[i:i+red]) for i in range(0, len(self.__karte), red)) + '\n'
+
+
+    def dajKartu(self, broj_karata = 1):
+        daneKarte = []
+        while broj_karata > 0:
+            daneKarte.append(self.__karte.pop())
+            broj_karata -= 1
+        return daneKarte
+
+    def izvadiZog(self):
+        kartaZoga = self._karte.pop()
+        self.__karte.insert(0, kartaZoga)
+        return kartaZoga
+
+    def promjesaj(self):
+        import random
+        random.shuffle(self.__karte)
+
+    def imaKarata(self):
+        return len(self.__karte) > 0
+
+class Igrac(object):
+
+    def __init__(self,ime):
+        self.__ime = ime
+        self.__karteZaSlaganje = []
+        self.__karteDobivene = []
+
+    @property
+    def ime(self):
+        return self.__ime
+
+    @property
+    def karteZaSlaganje(self):
+        return self.__karteZaSlaganje
+
+    @karteZaSlaganje.setter
+    def karteZaSlaganje(self, value):
+        self.__karteZaSlaganje = value
+
+    def baciKartu(self, izbor):
+        karta = self.__karteZaSlaganje.pop(izbor)
+        return karta
+
+    def uzmiKarteZaSlaganje(self, karte):
+        self.__karteZaSlaganje += karte
+
+    def uzmiKarteDobivene(self, karte):
+        self.__karteDobivene += karte 
+
+    def imaKarataZaSlaganje(self):
+        return len(self.__karteZaSlaganje) > 0
+
+    def bodovi(self):
+        return sum(karta.bod for karta in self.__karteDobivene)
+
+    def __str__(self):
+        return "Igrač " + self.__ime
+
+class Covjek(Igrac):
+
+    def __init__(self,ime):
+        super(Covjek, self).__init__(ime)
+
   
   
   
@@ -91,7 +166,4 @@ for boja in Karta.boje():
   
   
   
-  
-  
-  
-  
+ 
