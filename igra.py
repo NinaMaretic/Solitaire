@@ -143,10 +143,6 @@ class Igrac(object):
     def __str__(self):
         return "Igrač " + self.__ime
 
-class Covjek(Igrac):
-
-    def __init__(self,ime):
-        super(Covjek, self).__init__(ime)
 
   
   
