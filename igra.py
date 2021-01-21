@@ -189,15 +189,15 @@ class Igra(object):
    @property
    def igrac(self): return self.__igrac
 
-   def igranjeBriskule(self):
-   self.prikaz.prikaziPocetakIgre() 
+   def igranjeSolitaire(self):
+     self.prikaz.prikaziPocetakIgre() 
 
-   self.unosIgraca() 
-   self.dijeljenjeKarata() 
-   while self.igracPrvi.imaKarataZaBacanje() and self.igracDrugi.imaKarataZaBacanje():
-   self.igranjeRuke() 
+     self.unosIgraca() 
+     self.dijeljenjeKarata() 
+     while self.igrac.imaKarataZaSlaganje()
 
-   self.bodovanje() 
+
+     self.bodovanje() 
   
   
   
