@@ -165,7 +165,31 @@ class PrikazIgre(object):
         izbor = input(text)
         if izbor.isdigit() and int(izbor) >= 1 and int(izbor) <= len(kartaZaSlaganje):
             return int(izbor) - 1
-  
+          
+         
+        
+class Igra(object):
+   def __init__(self, prikaz = None):
+    self.__prikaz = prikaz
+    self.__spil = Spil()
+    self.__igrac = []
+    self.__boja = None
+    
+   @property
+   def prikaz(self): return self.__prikaz
+
+   @property
+   def spil(self): return self.__spil
+
+   @property
+   def boja(self): return self.__boja
+   @boja.setter
+   def boja(self, value): self.__boja = value
+
+   @property
+   def igrac(self): return self.__igrac
+
+   
   
   
   
