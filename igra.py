@@ -78,9 +78,9 @@ class Spil(object):
 
     def __init__(self):
         self.__karte = []
-        for zog in Karta.zogovi():
+        for boja in Karta.boje():
             for broj in Karta.brojevi():
-                self.__karte.append(Karta(broj,zog))
+                self.__karte.append(Karta(broj,boje))
 
     def __str__(self, red = 7, velicina = 18):
         return '\n'.join(''.join(str(karta).ljust(velicina, ' ') for karta in self.__karte[i:i+red]) for i in range(0, len(self.__karte), red)) + '\n'
@@ -93,10 +93,10 @@ class Spil(object):
             broj_karata -= 1
         return daneKarte
 
-    def izvadiZog(self):
-        kartaZoga = self._karte.pop()
-        self.__karte.insert(0, kartaZoga)
-        return kartaZoga
+    def izvadiBoju(self):
+        kartaBoje = self._karte.pop()
+        self.__karte.insert(0, kartaBoje)
+        return kartaBoje
 
     def promjesaj(self):
         import random
@@ -142,8 +142,29 @@ class Igrac(object):
 
     def __str__(self):
         return "Igrač " + self.__ime
-
-
+    
+class PrikazIgre(object):
+  def prikaziPocetakIgre(self):
+    print("*" * 50)
+    print("*" * 20 + "Solitaire" + "*" * 20)
+    print("*" * 50)
+    
+  def unesiIgraca(self):
+    while true:
+        ime=input("Unesi ime: ")
+        if ime.strip():
+          print("*" * 50)
+          return ime.strip()
+  def prikaziBoju(self, kartaBoje):
+    print("Solitaire je: " + str(kartaBoje))
+    print("*" * 50)
+    
+  def izaberiKartuZaSlaganje(self, kartaZaSlaganje):
+     text = ">>>baci kartu\n" + '\n'.join(' ' + str(i+1) + ') ' + str(karta) for i, karta in enumerate(kartaZaSlaganje)) + '\n>>>'
+     while True:
+        izbor = input(text)
+        if izbor.isdigit() and int(izbor) >= 1 and int(izbor) <= len(kartaZaSlaganje):
+            return int(izbor) - 1
   
   
   
