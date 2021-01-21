@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-01-09T16:00:15.546Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36" etag="8MV82u74WCmaDLKCILqW" version="14.1.9" type="github" pages="3">
+<mxfile host="app.diagrams.net" modified="2021-01-21T14:31:39.852Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36" etag="Af-fyvZHXpKFVVLq1Jum" version="14.2.6" type="github" pages="3">
   <diagram id="C__Bq0LCmNC4CeiJP49S" name="UseCase:Igranje Solitaire">
-    <mxGraphModel dx="868" dy="1651" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1182" dy="1933" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -59,7 +59,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="SkVuj0tF4XXO_pTDwX4R" name="Activity:Igranje Solitaire">
-    <mxGraphModel dx="868" dy="482" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1182" dy="764" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="4m98veBbepMnk6HmKC_3-0" />
         <mxCell id="4m98veBbepMnk6HmKC_3-1" parent="4m98veBbepMnk6HmKC_3-0" />
@@ -120,8 +120,8 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="37R8ABsDAtEVfFQXpqoU" name="Page-3">
-    <mxGraphModel dx="868" dy="482" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+  <diagram id="37R8ABsDAtEVfFQXpqoU" name="Dijagram podaktivnosti unosa igrača">
+    <mxGraphModel dx="1182" dy="764" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="lsJdD70JWdYicOoLSXgX-0" />
         <mxCell id="lsJdD70JWdYicOoLSXgX-1" parent="lsJdD70JWdYicOoLSXgX-0" />
