@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-01-21T16:14:36.029Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36" etag="YL_pVwoTlbHdoeJEhQsp" version="14.2.6" type="github" pages="4">
+<mxfile host="app.diagrams.net" modified="2021-01-21T16:40:00.727Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36" etag="zwgvhDn6gYkf_b-fS2KO" version="14.2.6" type="github" pages="4">
   <diagram id="C__Bq0LCmNC4CeiJP49S" name="UseCase:Igranje Solitaire">
     <mxGraphModel dx="1182" dy="1933" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -142,6 +142,12 @@
         </mxCell>
         <mxCell id="Qh_crsWt-kHArjGHV1NI-30" value="include / Bodovanje" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;fontColor=#000000;" vertex="1" parent="Qh_crsWt-kHArjGHV1NI-29">
           <mxGeometry y="30" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Qh_crsWt-kHArjGHV1NI-31" value="igrača ne može složiti karte" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="4m98veBbepMnk6HmKC_3-1">
+          <mxGeometry x="460" y="240" width="160" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Qh_crsWt-kHArjGHV1NI-32" value="igrača može složiti karte" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="4m98veBbepMnk6HmKC_3-1">
+          <mxGeometry x="185" y="330" width="140" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
