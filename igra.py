@@ -200,7 +200,17 @@ class Igra(object):
      prikaz = PrikazIgre()
      igra=Igra(prikaz)
      igra.igranjeSolitaire()
-  
+class Igra(object):
+   def __init__(self, prikaz = None):
+      self.__prikaz=prikaz
+      self.__spil=Spil()
+      self.__igraci=[]
+class Spil(object):
+   def __init__(self):
+      self.__karte=[]
+      for boja in Karta.boje():
+        for broj in Karta.brojevi():
+          self.__karte.append(Karta(broj=broj,boja))
   
   
   
