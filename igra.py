@@ -195,9 +195,11 @@ class Igra(object):
      self.unosIgraca() 
      self.dijeljenjeKarata() 
      while self.igrac.imaKarataZaSlaganje()
-
-
-     self.bodovanje() 
+        self.bodovanje() 
+   def main():
+     prikaz = PrikazIgre()
+     igra=Igra(prikaz)
+     igra.igranjeSolitaire()
   
   
   
