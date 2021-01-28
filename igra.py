@@ -228,7 +228,14 @@ class Igra(object):
    def unosIgraca(self): 
         ime = self.prikaz.unesiIgraca() 
         self.igrac.append(Igrac(ime)) 
-  
+class Igra(object):
+   def dijeljenjeKarata(self): 
+        self.spil.promjesaj() 
+        for igrac in self.__igraci:
+            igrac.uzmiKarteZaSlaganje(self.spil.dajKartu(3))
+        kartaBoje = self.spil.izvadiBoju() 
+        self.boja = kartaBoje.boja
+        self.prikaz.prikaziBoju(kartaBoje) 
   
   
   
