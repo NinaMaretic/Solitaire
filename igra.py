@@ -217,8 +217,17 @@ class Spil(object):
       for boja in Karta.boje():
         for broj in Karta.brojevi():
           self.__karte.append(Karta(broj=broj,boja))
-  
-
+          
+class Igra(object):
+   def igranjeSolitaire(self): 
+        self.prikaz.prikaziPocetakIgre() 
+        self.unosIgraca() 
+        self.dijeljenjeKarata() 
+        self.bodovanje() 
+class Igra(object):
+   def unosIgraca(self): 
+        ime = self.prikaz.unesiIgraca() 
+        self.igrac.append(Igrac(ime)) 
   
   
   
