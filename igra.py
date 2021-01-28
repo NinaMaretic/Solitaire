@@ -196,6 +196,12 @@ class Igra(object):
      self.dijeljenjeKarata() 
      while self.igrac.imaKarataZaSlaganje()
         self.bodovanje() 
+   def dijeljenjeKarata(self):
+      self.spil.promjesaj()
+      self.igrac.uzmiKarteZaSlaganje(self.spil.dajKartu(7))
+      kartaBoje=self.spil.izvadiBoju()
+      self.boja=kartaBoje.boja
+      self.prikaz.prikaziBoju(kartaBoje)
    def main():
      prikaz = PrikazIgre()
      igra=Igra(prikaz)
@@ -212,7 +218,7 @@ class Spil(object):
         for broj in Karta.brojevi():
           self.__karte.append(Karta(broj=broj,boja))
   
-  
+
   
   
   
