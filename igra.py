@@ -200,7 +200,7 @@ def Naredbe():
 def ispisiTablicu(tablica, kuca, pricuva):
 	
 	print(BREAK_STRING)
-	print("Otpad \t Pricuva \t\t\t\t Temelj")
+	print("Otpad \t Pricuva \t\t\t  Kuća")
 	print("{}\t{}\t\t{}\t{}\t{}\t{}".format(pricuva.getOtp(), pricuva.getPricuva(), 
 		kuca.getGornjaKarta("tref"), kuca.getGornjaKarta("herz"), 
 		kuca.getGornjaKarta("pik"), kuca.getGornjaKarta("karo")))
