@@ -1,20 +1,6 @@
 import random
 BREAK_STRING = "-------------------------------------------------------------------"
-class Prikaz(object):
 
-    def __init__(self): 
-        pass
-    def prikaziPocetakIgre(self):
-        print("#"*50)
-        print("#"*19 +" BATTLESHIP " + "#"*19)
-        print("#"*50)
-
-    def unesiIgraca(self):
-        while True:
-            ime = input("\nUnesi igraca ")
-            if ime.strip():
-                print("#"*50+"\n\n")
-                return ime
                 
 class Karta():
 	karta_ime = {1:"A", 2:"2", 3:"3", 4:"4", 5:"5", 6:"6", 7:"7",
@@ -239,7 +225,7 @@ if __name__ == "__main__":
 	t = Tablica([s.podijeli_karte(x) for x in range(1,8)])
 	k = Kuca()
 	p = Pricuva(s.podijeli_karte(24))
-	prikaz=Prikaz()
+	
 
 	print("\n" + BREAK_STRING)
 	print("Dobrodošli u našu igru! Sretno.")
