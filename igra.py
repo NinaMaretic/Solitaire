@@ -1,252 +1,291 @@
-print ("Solitaire")
-print ("Tonio-Nina-Anđela-Mirna")
-print("Naša igra")
-class Karta(object):
-  __karta_info = {1: ('as'),
-                  2: ('dvica'),
-                  3: ('trica'),
-                  4: ('četvorka'),
-                  5: ('petica'),
-                  6: ('šestica'),
-                  7: ('sedmica'),
-                  8: ('osmica'),
-                  9: ('devetka'),
-                  10: ('desetka'),
-                  11: ('dečko'),
-                  12: ('dama'),
-                  13: ('kralj')}
-  __boje = ['pik','herc','karo', 'tref']
-  
-  @staticmethod 
-  def brojevi():
-    return Karta.__karta_info.keys()
-  
-  @staticmethod
-  def boja():
-    return list(Karta.__zogovi)
-  
-  def __init__(self, broj, boja, vidljiva=False):
-    self.__broj=broj
-    self.__boja=boja
-    self.__vidljiva=vidljiva
-  
-  @property
-  def broj(self):
-    return self.__broj
-  
-  @property
-  def boja(self):
-    return self.__boja
-  
-  @property
-  def naziv(self):
-    return Karta.__karta_info[self.__broj][0]
-  
-  @property
-  def vidljiva(self):
-    return self.__vidljiva
-  
-  @vidljiva.setter
-  def vidljiva(self,value):
-    self.__vidljiva = value
-   
-  def __repr__(self):
-    return self.__class__.__name__ + '(%r, %r, %r)' % (self.__broj, self.__boja, self.__vidljiva)
-  
-  def __str__(self):
-    return self.naziv.title() + ' ' + self.zog
-  
-  @staticmethod
-  def jeVeca(broj,kartaPrva,kartaDruga):
-    if kartaPrva.broj==broj and kartaDruga==broj:
-      return kartaPrva.broj>kartaDruga.broj
-    elif kartaPrva.broj!=broj and kartaDruga.broj==broj:
-      return False
-    elif kartaPrva.broj==broj and kartaDruga.broj!=broj:
-      return True
-    elif kartaPrva.broj==kartaDruga.broj:
-      return kartaPrva.broj>kartaDruga.broj
-    return True
-  
-for boja in Karta.boje():
-  for broj in Karta.brojevi():
-    k=Karta(broj, boja)
-    print ('%r %s' % (k, k))
-    
+import random
+BREAK_STRING = "-------------------------------------------------------------------"
+class Prikaz(object):
 
-class Spil(object):
+    def __init__(self): 
+        pass
+    def prikaziPocetakIgre(self):
+        print("#"*50)
+        print("#"*19 +" BATTLESHIP " + "#"*19)
+        print("#"*50)
 
-    def __init__(self):
-        self.__karte = []
-        for boja in Karta.boje():
-            for broj in Karta.brojevi():
-                self.__karte.append(Karta(broj,boje))
+    def unesiIgraca(self):
+        while True:
+            ime = input("\nUnesi igraca ")
+            if ime.strip():
+                print("#"*50+"\n\n")
+                return ime
+                
+class Karta():
+	karta_ime = {1:"A", 2:"2", 3:"3", 4:"4", 5:"5", 6:"6", 7:"7",
+					8:"8", 9:"9", 10:"10", 11:"J", 12:"Q", 13:"K"}
 
-    def __str__(self, red = 7, velicina = 18):
-        return '\n'.join(''.join(str(karta).ljust(velicina, ' ') for karta in self.__karte[i:i+red]) for i in range(0, len(self.__karte), red)) + '\n'
+	def __init__(self, value, boja):
+		self.ime = self.karta_ime[value]
+		self.boja = boja
+		self.naslov = "%s%s" % (self.ime, self.boja)
+		self.value = value
+
+	def Ispod(self, karta):
+		return self.value == (karta.value - 1)
+
+	def SuprotnaBoja(self, karta):
+		if self.boja == "tref" or self.boja == "pik":
+			return karta.boja == "herz" or karta.boja == "karo"
+		else:
+			return karta.boja == "pik" or karta.boja == "tref"
+
+	def Slaganje(self, karta):
+		if karta.Ispod(self) and karta.SuprotnaBoja(self):
+			return True
+		else:
+			return False
+
+	def __str__(self):
+		return self.naslov
+
+class Spil():
+	nepromijesani_spil = [Karta(karta, boja) for karta in range(1, 14) for boja in ["tref", "karo", "herz", "pik"]]
+
+	def __init__(self, broj_spil=1):
+		self.spil = self.nepromijesani_spil * broj_spil
+		random.shuffle(self.spil)
+
+	def okreni_kartu(self):
+		return self.spil.pop()
+
+	def podijeli_karte(self, broj_spil):
+		return [self.spil.pop() for x in range(0, broj_spil)]
+
+	def __str__(self):
+		return str(self.spil)
+
+		
+class Tablica():
+	
+
+	def __init__(self, karta_lista):
+		self.neokrenuta = {x: karta_lista[x] for x in range(7)}
+		self.okrenuta = {x: [self.neokrenuta[x].pop()] for x in range(7)}
+
+	def okreni_kartu(self, stupac):
+		
+		if len(self.neokrenuta[stupac]) > 0:
+			self.okrenuta[stupac].append(self.neokrenuta[stupac].pop())
+
+	def duljina_skupa(self):
+		
+		return max([len(self.okrenuta[x]) + len(self.neokrenuta[x]) for x in range(7)])
+
+	def dodajKarte(self, karte, stup):
+		
+		stup_karte = self.okrenuta[stup]
+		if len(stup_karte) == 0 and karte[0].value == 13:
+			stup_karte.extend(karte)
+			return True
+		elif len(stup_karte) > 0 and stup_karte[-1].Slaganje(karte[0]):
+			stup_karte.extend(karte)
+			return True
+		else:
+			return False
+
+	def izTab_uTab(self, c1, c2):
+		
+		c1_karte = self.okrenuta[c1]
+
+		for index in range(len(c1_karte)):
+			if self.dodajKarte(c1_karte[index:], c2):
+				self.okrenuta[c1] = c1_karte[0:index]
+				if index == 0:
+					self.okreni_kartu(c1)
+				return True
+		return False
+
+	def izTab_uKucu(self, kuca, stup):
+		
+		stup_karte = self.okrenuta[stup]
+		if len(stup_karte) == 0:
+			return False
+
+		if kuca.dodajKartu(stup_karte[-1]):
+			stup_karte.pop()
+			if len(stup_karte) == 0:
+				self.okreni_kartu(stup)
+			return True
+		else:
+			return False
+
+	def izOtp_uTab(self, otp_skup, stupac):
+		
+		if len(otp_skup.otp)==0:
+			return False
+		karta = otp_skup.otp[-1]
+		if self.dodajKarte([karta], stupac):
+			otp_skup.pop_otp_karta()
+			return True
+		else:
+			return False
+
+class Pricuva():
+	
+	def __init__(self, karte):
+		self.spil = karte
+		self.otp = []
+
+	def izOtp_uPric(self):
+		
+		if len(self.spil) + len(self.otp) == 0:
+			print("Nema karata u pricuvi.")
+			return False
+
+		if len(self.spil) == 0:
+			self.otp.reverse()
+			self.spil = self.otp.copy()
+			self.otp.clear()
+
+		self.otp.append(self.spil.pop())
+		return True
+
+	def pop_otp_karta(self):
+		
+		if len(self.otp) > 0:
+			return self.otp.pop()
+
+	def getOtp(self):
+		
+		if len(self.otp) > 0:
+			return self.otp[-1]
+		else:
+			return "prazno"
+
+	def getPricuva(self):
+		
+		if len(self.spil) > 0:
+			return str(len(self.spil)) + " karta(e)"
+		else:
+			return "prazno"
+
+class Kuca():
+
+	def __init__(self):
+		self.skup_kuca = {"tref":[], "herz":[], "pik":[], "karo":[]}
+
+	def dodajKartu(self, karta):
+
+		skup = self.skup_kuca[karta.boja]
+		if (len(skup) == 0 and karta.value == 1):
+			skup.append(karta)
+			return True
+		elif(len(skup)+1==karta.value):
+			skup.append(karta)
+			return True
+		else:
+			return False
+	def getGornjaKarta(self, boja):
+		
+		skup = self.skup_kuca[boja]
+		if len(skup) == 0:
+			return boja[0].upper()
+		else:
+			return self.skup_kuca[boja][-1]
+
+	def pobjeda(self):
+		
+		for boja, skup in self.skup_kuca.items():
+			if len(skup) == 0:
+				return False
+			karta = skup[-1]
+			if karta.value != 13:
+				return False
+		return True
+
+def Naredbe():
+	
+	print("Podržane naredbe: ")
+	print("\tmv - pomakni kartu iz pricuve u otpad")
+	print("\tok - pomakni kartu iz otpada u kucu")
+	print("\tot #T - pomakni kartu iz otpada u tablicu")
+	print("\ttk #T - pomakni kartu iz tablice u kucu")
+	print("\ttt #T1 #T2 - pomakni kartu iz jednog stupca u drugi")
+	print("\tp - pomoć")
+	print("\tq - quit")
+	print("\t*NAPOMENA: Herz/karo su crvene karte. Pik/tref su crne.")
+
+def ispisiTablicu(tablica, kuca, pricuva):
+	
+	print(BREAK_STRING)
+	print("Otpad \t Pricuva \t\t\t\t Temelj")
+	print("{}\t{}\t\t{}\t{}\t{}\t{}".format(pricuva.getOtp(), pricuva.getPricuva(), 
+		kuca.getGornjaKarta("tref"), kuca.getGornjaKarta("herz"), 
+		kuca.getGornjaKarta("pik"), kuca.getGornjaKarta("karo")))
+	print("\nTablica\n\t1\t2\t3\t4\t5\t6\t7\n")
+	
+	for x in range(tablica.duljina_skupa()):
+		print_str = ""
+		for stupac in range(7):
+			skrivene_karte = tablica.neokrenuta[stupac]
+			prikazane_karte = tablica.okrenuta[stupac]
+			if len(skrivene_karte) > x:
+				print_str += "\tx"
+			elif len(prikazane_karte) + len(skrivene_karte) > x:
+				print_str += "\t" + str(prikazane_karte[x-len(skrivene_karte)])
+			else:
+				print_str += "\t"
+		print(print_str)
+	print("\n"+BREAK_STRING)
+
+if __name__ == "__main__":
+	s = Spil()
+	t = Tablica([s.podijeli_karte(x) for x in range(1,8)])
+	k = Kuca()
+	p = Pricuva(s.podijeli_karte(24))
+	prikaz=Prikaz()
+
+	print("\n" + BREAK_STRING)
+	print("Dobrodošli u našu igru! Sretno.")
+	Naredbe()
+	ispisiTablicu(t, k, p)
 
 
-    def dajKartu(self, broj_karata = 1):
-        daneKarte = []
-        while broj_karata > 0:
-            daneKarte.append(self.__karte.pop())
-            broj_karata -= 1
-        return daneKarte
+	while not k.pobjeda():
+		naredba = input("Upisi naredbu ('p' za pomoć): ")
+		naredba = naredba.lower().replace(" ", "")
+		if naredba == "p":
+			Naredbe()
+		elif naredba == "q":
+			print("Uzbudljiva igra!")
+			break
+		elif naredba == "mv":
+			if p.izOtp_uPric():
+				ispisiTablicu(t, k, p)
+		elif naredba == "ok":
+			if p.getOtp()=="prazno":
+				print("Greska!")
+			elif k.dodajKartu(p.getOtp()):
+				p.pop_otp_karta()
+				ispisiTablicu(t, k, p)
+			else:
+				print("Greska!")
+		elif "ot" in naredba and len(naredba) == 3:
+			stupac = int(naredba[-1]) - 1
+			if t.izOtp_uTab(p, stupac):
+				ispisiTablicu(t, k, p)
+			else:
+				print("Greska!")
+		elif "tk" in naredba and len(naredba) == 3:
+			stupac = int(naredba[-1]) - 1
+			if t.izTab_uKucu(k, stupac):
+				ispisiTablicu(t, k, p)
+			else:
+				print("Greska!")
+		elif "tt" in naredba and len(naredba) == 4:
+			c1, c2 = int(naredba[-2]) - 1, int(naredba[-1]) - 1
+			if t.izTab_uTab(c1, c2):
+				ispisiTablicu(t, k, p)
+			else:
+				print("Greska!")
+		else:
+			print("Naredba nije podržana.")
 
-    def izvadiBoju(self):
-        kartaBoje = self._karte.pop()
-        self.__karte.insert(0, kartaBoje)
-        return kartaBoje
-
-    def promjesaj(self):
-        import random
-        random.shuffle(self.__karte)
-
-    def imaKarata(self):
-        return len(self.__karte) > 0
-
-class Igrac(object):
-
-    def __init__(self,ime):
-        self.__ime = ime
-        self.__karteZaSlaganje = []
-        self.__karteDobivene = []
-
-    @property
-    def ime(self):
-        return self.__ime
-
-    @property
-    def karteZaSlaganje(self):
-        return self.__karteZaSlaganje
-
-    @karteZaSlaganje.setter
-    def karteZaSlaganje(self, value):
-        self.__karteZaSlaganje = value
-
-    def baciKartu(self, izbor):
-        karta = self.__karteZaSlaganje.pop(izbor)
-        return karta
-
-    def uzmiKarteZaSlaganje(self, karte):
-        self.__karteZaSlaganje += karte
-
-    def uzmiKarteDobivene(self, karte):
-        self.__karteDobivene += karte 
-
-    def imaKarataZaSlaganje(self):
-        return len(self.__karteZaSlaganje) > 0
-
-    def bodovi(self):
-        return sum(karta.bod for karta in self.__karteDobivene)
-
-    def __str__(self):
-        return "Igrač " + self.__ime
-    
-class PrikazIgre(object):
-  def prikaziPocetakIgre(self):
-    print("*" * 50)
-    print("*" * 20 + "Solitaire" + "*" * 20)
-    print("*" * 50)
-    
-  def unesiIgraca(self):
-    while true:
-        ime=input("Unesi ime: ")
-        if ime.strip():
-          print("*" * 50)
-          return ime.strip()
-  def prikaziBoju(self, kartaBoje):
-    print("Solitaire je: " + str(kartaBoje))
-    print("*" * 50)
-    
-  def izaberiKartuZaSlaganje(self, kartaZaSlaganje):
-     text = ">>>baci kartu\n" + '\n'.join(' ' + str(i+1) + ') ' + str(karta) for i, karta in enumerate(kartaZaSlaganje)) + '\n>>>'
-     while True:
-        izbor = input(text)
-        if izbor.isdigit() and int(izbor) >= 1 and int(izbor) <= len(kartaZaSlaganje):
-            return int(izbor) - 1
-          
-         
-        
-class Igra(object):
-   def __init__(self, prikaz = None):
-    self.__prikaz = prikaz
-    self.__spil = Spil()
-    self.__igrac = []
-    self.__boja = None
-    
-   @property
-   def prikaz(self): return self.__prikaz
-
-   @property
-   def spil(self): return self.__spil
-
-   @property
-   def boja(self): return self.__boja
-   @boja.setter
-   def boja(self, value): self.__boja = value
-
-   @property
-   def igrac(self): return self.__igrac
-
-   def igranjeSolitaire(self):
-     self.prikaz.prikaziPocetakIgre() 
-
-     self.unosIgraca() 
-     self.dijeljenjeKarata() 
-     while self.igrac.imaKarataZaSlaganje()
-        self.bodovanje() 
-   def dijeljenjeKarata(self):
-      self.spil.promjesaj()
-      self.igrac.uzmiKarteZaSlaganje(self.spil.dajKartu(7))
-      kartaBoje=self.spil.izvadiBoju()
-      self.boja=kartaBoje.boja
-      self.prikaz.prikaziBoju(kartaBoje)
-   def main():
-     prikaz = PrikazIgre()
-     igra=Igra(prikaz)
-     igra.igranjeSolitaire()
-class Igra(object):
-   def __init__(self, prikaz = None):
-      self.__prikaz=prikaz
-      self.__spil=Spil()
-      self.__igraci=[]
-class Spil(object):
-   def __init__(self):
-      self.__karte=[]
-      for boja in Karta.boje():
-        for broj in Karta.brojevi():
-          self.__karte.append(Karta(broj=broj,boja))
-          
-class Igra(object):
-   def igranjeSolitaire(self): 
-        self.prikaz.prikaziPocetakIgre() 
-        self.unosIgraca() 
-        self.dijeljenjeKarata() 
-        self.bodovanje() 
-class Igra(object):
-   def unosIgraca(self): 
-        ime = self.prikaz.unesiIgraca() 
-        self.igrac.append(Igrac(ime)) 
-class Igra(object):
-   def dijeljenjeKarata(self): 
-        self.spil.promjesaj() 
-        for igrac in self.__igraci:
-            igrac.uzmiKarteZaSlaganje(self.spil.dajKartu(3))
-        kartaBoje = self.spil.izvadiBoju() 
-        self.boja = kartaBoje.boja
-        self.prikaz.prikaziBoju(kartaBoje) 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
- 
+	if k.pobjeda():
+		print("Cestitke!!! Pobijedili ste!")
