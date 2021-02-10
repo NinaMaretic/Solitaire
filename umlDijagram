@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-02-10T15:48:36.036Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.146 Safari/537.36" etag="pSHCaAo8AgLFXSKLjGIt" version="14.3.0" type="github" pages="7">
+<mxfile host="app.diagrams.net" modified="2021-02-10T15:50:44.439Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.146 Safari/537.36" etag="244SJP3GJ0714v2asskI" version="14.3.0" type="github" pages="7">
   <diagram id="DZQp7snYXMjosEwVwlP_" name="Dijagram klasa arhitekture Solitaire">
     <mxGraphModel dx="510" dy="545" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -286,7 +286,7 @@
         <mxCell id="bYq4S9aVXiqcCMMmj49v-3" value="igra:Igra" style="html=1;" parent="bYq4S9aVXiqcCMMmj49v-1" vertex="1">
           <mxGeometry x="420" y="40" width="110" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="bYq4S9aVXiqcCMMmj49v-4" value="prikaz:PrikazIgre" style="html=1;" parent="bYq4S9aVXiqcCMMmj49v-1" vertex="1">
+        <mxCell id="bYq4S9aVXiqcCMMmj49v-4" value="prikaz:ispisiTablicu" style="html=1;" parent="bYq4S9aVXiqcCMMmj49v-1" vertex="1">
           <mxGeometry x="840" y="40" width="110" height="50" as="geometry" />
         </mxCell>
         <mxCell id="bYq4S9aVXiqcCMMmj49v-5" value="" style="endArrow=none;dashed=1;html=1;" parent="bYq4S9aVXiqcCMMmj49v-1" edge="1">
