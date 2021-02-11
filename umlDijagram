@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-02-11T10:41:58.330Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36" etag="9FvhU-Y24PvIJTuY3kvn" version="14.3.0" type="github" pages="6">
+<mxfile host="app.diagrams.net" modified="2021-02-11T10:42:43.828Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36" etag="TgprnjcitHZFG1xjLinz" version="14.3.0" type="github" pages="6">
   <diagram id="DZQp7snYXMjosEwVwlP_" name="Dijagram klasa arhitekture Solitaire">
     <mxGraphModel dx="1278" dy="548" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -181,7 +181,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="-9acr1TMcuYLkA6L7FFD" name="DijagramSlijeda">
-    <mxGraphModel dx="1278" dy="548" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="2336" math="0" shadow="0">
+    <mxGraphModel dx="1038" dy="582" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="2336" math="0" shadow="0">
       <root>
         <mxCell id="NR1-8Ax01A8EGwn6DpFO-0" />
         <mxCell id="NR1-8Ax01A8EGwn6DpFO-1" parent="NR1-8Ax01A8EGwn6DpFO-0" />
@@ -269,7 +269,7 @@
             <mxPoint x="195" y="120" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="NR1-8Ax01A8EGwn6DpFO-4" value="prikaz : ispisiTablicu" style="html=1;" parent="9-XIje0UZasTiWFe6mjN-0" vertex="1">
+        <mxCell id="NR1-8Ax01A8EGwn6DpFO-4" value=":Kuca" style="html=1;" parent="9-XIje0UZasTiWFe6mjN-0" vertex="1">
           <mxGeometry x="-55" width="110" height="50" as="geometry" />
         </mxCell>
       </root>
