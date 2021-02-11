@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-02-11T10:27:24.647Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36" etag="ciF_vjWhrwJvRHiYvD-3" version="14.3.0" type="github" pages="6">
+<mxfile host="app.diagrams.net" modified="2021-02-11T10:33:24.149Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36" etag="mEgo4XLjRZU3Oocg3Eby" version="14.3.0" type="github" pages="6">
   <diagram id="DZQp7snYXMjosEwVwlP_" name="Dijagram klasa arhitekture Solitaire">
     <mxGraphModel dx="1278" dy="548" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -21,22 +21,25 @@
         <mxCell id="ndo-OHFvEicI7PPkTVR9-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=none;endFill=0;" parent="9t3jEi0AikfE1uHbnC3H-1" source="ndo-OHFvEicI7PPkTVR9-2" target="ndo-OHFvEicI7PPkTVR9-0" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="ndo-OHFvEicI7PPkTVR9-2" value="«Model»&lt;br&gt;&lt;b&gt;Igrac&lt;/b&gt;" style="html=1;" parent="9t3jEi0AikfE1uHbnC3H-1" vertex="1">
+        <mxCell id="ndo-OHFvEicI7PPkTVR9-2" value="«Model»&lt;br&gt;&lt;b&gt;Tablica&lt;/b&gt;" style="html=1;" parent="9t3jEi0AikfE1uHbnC3H-1" vertex="1">
           <mxGeometry x="170" y="210" width="110" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="ndo-OHFvEicI7PPkTVR9-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=classic;endFill=1;" parent="9t3jEi0AikfE1uHbnC3H-1" source="ndo-OHFvEicI7PPkTVR9-3" target="ndo-OHFvEicI7PPkTVR9-2" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="ndo-OHFvEicI7PPkTVR9-3" value="«Model»&lt;br&gt;&lt;b&gt;Covjek&lt;/b&gt;" style="html=1;" parent="9t3jEi0AikfE1uHbnC3H-1" vertex="1">
-          <mxGeometry x="170" y="320" width="110" height="50" as="geometry" />
+        <mxCell id="ndo-OHFvEicI7PPkTVR9-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=classic;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="9t3jEi0AikfE1uHbnC3H-1" source="ndo-OHFvEicI7PPkTVR9-2" target="Tu7R2aRuSIVJCzx93o-h-1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="225" y="270" as="sourcePoint" />
+            <Array as="points" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="ndo-OHFvEicI7PPkTVR9-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" parent="9t3jEi0AikfE1uHbnC3H-1" target="ndo-OHFvEicI7PPkTVR9-2" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="359" y="235" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="ndo-OHFvEicI7PPkTVR9-10" value="«View»&lt;br&gt;&lt;b&gt;ispisiTablicu&lt;/b&gt;" style="html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="9t3jEi0AikfE1uHbnC3H-1" vertex="1">
+        <mxCell id="Tu7R2aRuSIVJCzx93o-h-0" value="«Model»&lt;br&gt;&lt;b&gt;Pričuva&lt;/b&gt;" style="html=1;" vertex="1" parent="9t3jEi0AikfE1uHbnC3H-1">
           <mxGeometry x="359" y="210" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Tu7R2aRuSIVJCzx93o-h-1" value="«Model»&lt;br&gt;&lt;b&gt;Kuca&lt;/b&gt;" style="html=1;" vertex="1" parent="9t3jEi0AikfE1uHbnC3H-1">
+          <mxGeometry x="170" y="320" width="110" height="50" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
