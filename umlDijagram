@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-02-11T10:39:31.454Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36" etag="nLwpIWFv9uSPcrZwa3Uy" version="14.3.0" type="github" pages="6">
+<mxfile host="app.diagrams.net" modified="2021-02-11T10:41:58.330Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36" etag="9FvhU-Y24PvIJTuY3kvn" version="14.3.0" type="github" pages="6">
   <diagram id="DZQp7snYXMjosEwVwlP_" name="Dijagram klasa arhitekture Solitaire">
     <mxGraphModel dx="1278" dy="548" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -174,11 +174,8 @@
         <mxCell id="FNagopKZCx0Tcayg8Qmt-1" value="«View»&#xa;Kuca" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;strokeColor=#6c8ebf;fillColor=#dae8fc;" vertex="1" parent="WZ7ZmbY-4HLNuoK_Bism-1">
           <mxGeometry x="300" y="180" width="230" height="140" as="geometry" />
         </mxCell>
-        <mxCell id="FNagopKZCx0Tcayg8Qmt-2" value="+ field: type" style="text;strokeColor=#6c8ebf;fillColor=#dae8fc;align=center;verticalAlign=top;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontStyle=0;startSize=40;" vertex="1" parent="FNagopKZCx0Tcayg8Qmt-1">
-          <mxGeometry y="50" width="230" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="FNagopKZCx0Tcayg8Qmt-4" value="+ method(type): type" style="text;strokeColor=#6c8ebf;fillColor=#dae8fc;align=center;verticalAlign=top;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontStyle=0;startSize=40;" vertex="1" parent="FNagopKZCx0Tcayg8Qmt-1">
-          <mxGeometry y="90" width="230" height="50" as="geometry" />
+        <mxCell id="FNagopKZCx0Tcayg8Qmt-4" value="+__init__(self)&#xa;+dodajKartu(self, karta)&#xa;+getGornjaKarta(self, boja)&#xa;+pobjeda(self)" style="text;strokeColor=#6c8ebf;fillColor=#dae8fc;align=center;verticalAlign=top;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontStyle=0;startSize=40;" vertex="1" parent="FNagopKZCx0Tcayg8Qmt-1">
+          <mxGeometry y="50" width="230" height="90" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
