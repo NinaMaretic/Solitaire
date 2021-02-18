@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-02-18T21:50:38.546Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36" etag="raAP0cDwwJTBx-x2zMr2" version="14.3.0" type="github" pages="3">
+<mxfile host="app.diagrams.net" modified="2021-02-18T21:55:10.139Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36" etag="Ef1L9PMG1JdG2smJr4om" version="14.3.0" type="github" pages="3">
   <diagram id="C__Bq0LCmNC4CeiJP49S" name="UseCase:Igranje Solitaire">
     <mxGraphModel dx="1038" dy="1717" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -50,7 +50,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="SkVuj0tF4XXO_pTDwX4R" name="Activity:Igranje Solitaire">
-    <mxGraphModel dx="1278" dy="548" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1038" dy="548" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="4m98veBbepMnk6HmKC_3-0" />
         <mxCell id="4m98veBbepMnk6HmKC_3-1" parent="4m98veBbepMnk6HmKC_3-0" />
@@ -83,22 +83,20 @@
         <mxCell id="HzPvS1mRdTxtyTrz__oX-0" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#ff0000;" parent="4m98veBbepMnk6HmKC_3-1" vertex="1">
           <mxGeometry x="320" y="450" width="30" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="Qh_crsWt-kHArjGHV1NI-23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="4m98veBbepMnk6HmKC_3-1" source="Qh_crsWt-kHArjGHV1NI-16" edge="1">
+        <mxCell id="Qh_crsWt-kHArjGHV1NI-23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="4m98veBbepMnk6HmKC_3-1" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="335" y="10" as="targetPoint" />
+            <mxPoint x="335" y="90" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Qh_crsWt-kHArjGHV1NI-16" value="&lt;span style=&quot;font-weight: 400&quot;&gt;Unos igrača&lt;/span&gt;" style="swimlane;html=1;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=0;resizeLast=1;container=0;fontColor=#000000;collapsible=0;rounded=1;arcSize=30;strokeColor=#ff0000;fillColor=#ffffc0;swimlaneFillColor=#ffffc0;dropTarget=0;" parent="4m98veBbepMnk6HmKC_3-1" vertex="1">
-          <mxGeometry x="255" y="90" width="160" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="Qh_crsWt-kHArjGHV1NI-20" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;verticalAlign=bottom;endArrow=open;endSize=8;strokeColor=#ff0000;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="4m98veBbepMnk6HmKC_3-1" source="Qh_crsWt-kHArjGHV1NI-16" edge="1">
+        <mxCell id="Qh_crsWt-kHArjGHV1NI-20" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;verticalAlign=bottom;endArrow=open;endSize=8;strokeColor=#ff0000;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="4m98veBbepMnk6HmKC_3-1" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="335" y="190" as="targetPoint" />
-            <mxPoint x="334.5" y="150" as="sourcePoint" />
+            <mxPoint x="335" y="120" as="sourcePoint" />
             <Array as="points" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Qh_crsWt-kHArjGHV1NI-24" value="&lt;span style=&quot;font-weight: 400&quot;&gt;Dijeljenje karata&lt;/span&gt;" style="swimlane;html=1;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=0;resizeLast=1;container=0;fontColor=#000000;collapsible=0;rounded=1;arcSize=30;strokeColor=#ff0000;fillColor=#ffffc0;swimlaneFillColor=#ffffc0;dropTarget=0;" parent="4m98veBbepMnk6HmKC_3-1" vertex="1">
+        <mxCell id="Qh_crsWt-kHArjGHV1NI-24" value="&lt;span style=&quot;font-weight: 400&quot;&gt;Slaganje&lt;/span&gt;" style="swimlane;html=1;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=0;resizeLast=1;container=0;fontColor=#000000;collapsible=0;rounded=1;arcSize=30;strokeColor=#ff0000;fillColor=#ffffc0;swimlaneFillColor=#ffffc0;dropTarget=0;" parent="4m98veBbepMnk6HmKC_3-1" vertex="1">
           <mxGeometry x="250" y="190" width="160" height="30" as="geometry" />
         </mxCell>
         <mxCell id="Qh_crsWt-kHArjGHV1NI-29" value="&lt;span style=&quot;font-weight: 400&quot;&gt;Pobjeda&lt;/span&gt;" style="swimlane;html=1;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=0;resizeLast=1;container=0;fontColor=#000000;collapsible=0;rounded=1;arcSize=30;strokeColor=#ff0000;fillColor=#ffffc0;swimlaneFillColor=#ffffc0;dropTarget=0;" parent="4m98veBbepMnk6HmKC_3-1" vertex="1">
@@ -128,11 +126,14 @@
             <Array as="points" />
           </mxGeometry>
         </mxCell>
+        <mxCell id="rPs-vZYOj0eEpSsIYHe1-0" value="&lt;span style=&quot;font-weight: 400&quot;&gt;Dijeljenje karata&lt;/span&gt;" style="swimlane;html=1;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=0;resizeLast=1;container=0;fontColor=#000000;collapsible=0;rounded=1;arcSize=30;strokeColor=#ff0000;fillColor=#ffffc0;swimlaneFillColor=#ffffc0;dropTarget=0;" vertex="1" parent="4m98veBbepMnk6HmKC_3-1">
+          <mxGeometry x="255" y="90" width="160" height="30" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram id="vUCkv-2S8t0nyJwgYQ0f" name="Podaktivnost dijeljenja karata">
-    <mxGraphModel dx="1278" dy="548" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1038" dy="548" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="yTl_c_yznPGWO6Ydceu9-0" />
         <mxCell id="yTl_c_yznPGWO6Ydceu9-1" parent="yTl_c_yznPGWO6Ydceu9-0" />
